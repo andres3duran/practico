@@ -24,7 +24,7 @@ jobs:
         needs: suma_de_los_dos_digitos
         steps:
           - name: Mostrar resultado
-          run: |
+            run: |
               suma=${{ needs.suma_de_los_dos_digitos.outputs.resultado_de_la_suma }}
             if [ $suma -gt 10 ]; then
               echo "El resultado de la suma es mayor que 10."
