@@ -2,8 +2,8 @@ name: suma_de_dos_digitos
 
 on:
   push:
-    branches: 
-      -test/andres
+    branches:
+      - 'test/**'
     
 jobs:
     suma_de_los_digitos:
