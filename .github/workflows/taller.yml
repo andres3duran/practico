@@ -1,8 +1,8 @@
 name: suma_de_dos_digitos
 
 on:
-  push:
-    branches:
+    push:
+      branches:
         - 'test/andres' 
     
 jobs:
@@ -23,11 +23,11 @@ jobs:
         runs-on: ubuntu-latest
         needs: suma_de_los_dos_digitos
         steps:
-      - name: Mostrar resultado
-        run: |
-          suma=${{ needs.suma_de_los_dos_digitos.outputs.resultado_de_la_suma }}
-          if [ $suma -gt 10 ]; then
-            echo "El resultado de la suma es mayor que 10."
-          else
-            echo "El resultado de la suma es menor o igual a 10."
-          fi
+          - name: Mostrar resultado
+          run: |
+              suma=${{ needs.suma_de_los_dos_digitos.outputs.resultado_de_la_suma }}
+            if [ $suma -gt 10 ]; then
+              echo "El resultado de la suma es mayor que 10."
+            else
+              echo "El resultado de la suma es menor o igual a 10."
+            fi
