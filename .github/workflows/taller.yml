@@ -25,9 +25,9 @@ jobs:
         steps:
           - name: Mostrar resultado
             run: |
-              suma=${{ needs.suma_de_los_dos_digitos.outputs.resultado_de_la_suma }}
-            if [ $suma -gt 10 ]; then
-              echo "El resultado de la suma es mayor que 10."
-            else
-              echo "El resultado de la suma es menor o igual a 10."
-            fi
+                suma=${{ needs.suma_de_los_dos_digitos.outputs.resultado_de_la_suma }}
+              if [ $suma -gt 10 ]; then
+                echo "El resultado de la suma es mayor que 10."
+              else
+                echo "El resultado de la suma es menor o igual a 10."
+              fi
