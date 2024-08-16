@@ -2,12 +2,13 @@ name: suma_de_dos_digitos
 
 on:
   push:
-    branches: 
-      -test/andres
+    branches:
+        - 'main' 
     
 jobs:
     suma_de_los_digitos:
         runs-on: ubuntu-latest
+        enviroment: 
         outputs:
               suma_result: ${{ steps.sumar.outputs.suma }}
         steps:
