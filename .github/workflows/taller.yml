@@ -2,6 +2,8 @@ name: suma_de_dos_digitos
 
 on:
   push:
+    branches: 
+      -test/andres
     
 jobs:
     suma_de_los_digitos:
@@ -10,7 +12,7 @@ jobs:
             suma_result: ${{ steps.sumar.outputs.suma }}
         steps:
             - name: Sumar digitos
-              id:
+              id: sumar
               run: |
                 variable1=$${{vars.VARIABLE_UNO }}
                 variable2=$${{vars.VARIABLE_DOS }}
