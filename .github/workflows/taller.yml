@@ -14,8 +14,8 @@ jobs:
             - name: Sumar los dos digitos
               id: sumar
               run: |
-                variable1=$${{ vars.A }}
-                variable2=$${{ vars.B }}
+                variable1=${{ vars.A }}
+                variable2=${{ vars.B }}
                 suma=$((variable1 + variable2))
                 echo "La suma de $digito1 y $digito2 es: $suma"
                 echo "::set-output name=suma::$suma"
