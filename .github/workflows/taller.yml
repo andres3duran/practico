@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
     
 env:
-    WORKFLOW_VAR: "Im a workflow variable"
+    WORKFLOW_VAR: 5
+    WORKFLOW_NUMBER: 3
 
 jobs:
     types_vars:
@@ -16,6 +17,6 @@ jobs:
               env:
                 STEP_VAR: "Im a step variable"
               run: |
-                echo "Workflow variable: ${{ env.WORKFLOW_VAR }}"
+                echo "Workflow variable: ${{ env.WORKFLOW_VAR + env.WORKFLOW_VAR }}"
                 echo "Job variable: ${{ env.JOB_VAR }}"
                 echo "Step variable: ${{ env.STEP_VAR }}"
