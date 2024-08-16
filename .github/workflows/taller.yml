@@ -3,18 +3,17 @@ name: suma_de_dos_digitos
 on:
   push:
     
-env:
-    VARIABLE_UNO: 1
-    VARIABLE_DOS: 2
-
 jobs:
     suma_de_los_digitos:
         runs-on: ubuntu-latest
+        outputs:
+            suma_result: ${{ steps.sumar.outputs.suma }}
         steps:
             - name: Sumar digitos
-              variable1= $${{ vars.VARIABLE_UNO }}
-              variable2= $${{ vars.VARIABLE_DOS }}
-              suma=$((variable1 + variable2))
+              id:
               run: |
+                variable1=$${{vars.VARIABLE_UNO }}
+                variable2=$${{vars.VARIABLE_DOS }}
+                suma=$((variable1 + variable2))
                 echo "La suma de $digito1 y $digito2 es: $suma"
-                echo "suma=$suma" >> $GITHUB_ENV
+                echo "::set-output name=suma::$suma"
