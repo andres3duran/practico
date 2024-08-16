@@ -8,6 +8,7 @@ on:
 jobs:
     suma_de_los_digitos:
         runs-on: ubuntu-latest
+        enviroment: 
         outputs:
               suma_result: ${{ steps.sumar.outputs.suma }}
         steps:
