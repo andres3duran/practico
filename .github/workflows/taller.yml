@@ -18,7 +18,7 @@ jobs:
                 variable2=${{ vars.B }}
                 suma=$((variable1 + variable2))
                 echo "La suma de $variable1 y $variable2 es: $suma"
-                echo "::set-output name=suma::$suma"
+                echo "suma=$suma" >> $GITHUB_OUTPUT
  
     compara:
         runs-on: ubuntu-latest
