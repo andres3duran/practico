@@ -3,7 +3,7 @@ name: suma_de_dos_digitos
 on:
   push:
     branches:
-      - 'test/andres'
+        - 'test/andres'
     
 jobs:
     suma_de_los_digitos:
