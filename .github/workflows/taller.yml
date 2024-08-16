@@ -9,7 +9,7 @@ jobs:
     suma_de_los_digitos:
         runs-on: ubuntu-latest
         outputs:
-            suma_result: ${{ steps.sumar.outputs.suma }}
+              suma_result: ${{ steps.sumar.outputs.suma }}
         steps:
             - name: Sumar digitos
               id: sumar
