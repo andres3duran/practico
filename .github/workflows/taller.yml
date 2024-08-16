@@ -17,6 +17,7 @@ jobs:
               env:
                 STEP_VAR: "Im a step variable"
               run: |
-                echo "Workflow variable: $((env.WORKFLOW_VAR + env.WORKFLOW_VAR))"
+                suma=$((env.WORKFLOW_VAR + env.WORKFLOW_VAR))
+                echo "La suma de los digitos es: $suma"
                 echo "Job variable: ${{ env.JOB_VAR }}"
                 echo "Step variable: ${{ env.STEP_VAR }}"
