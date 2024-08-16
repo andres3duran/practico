@@ -12,5 +12,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Sumar digitos
-              resultado= $((vars.VARIABLE_UNO + vars.VARIABLE_UNO))
-              run: echo " La suma es $resultado "
+              variable1= $${{ vars.VARIABLE_UNO }}
+              variable2= $${{ vars.VARIABLE_DOS }}
+              suma=$((variable1 + variable2))
+              run: |
+                echo "La suma de $digito1 y $digito2 es: $suma"
+                echo "suma=$suma" >> $GITHUB_ENV
