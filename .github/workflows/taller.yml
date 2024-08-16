@@ -1,23 +1,16 @@
-name: variables
+name: suma_de_dos_digitos
 
 on:
-  workflow_dispatch:
+  push:
     
 env:
-    WORKFLOW_VAR: 5
-    WORKFLOW_NUMBER: 3
+    VARIABLE_UNO: 1
+    VARIABLE_DOS: 2
 
 jobs:
-    types_vars:
+    suma_de_los_digitos:
         runs-on: ubuntu-latest
-        env:
-            JOB_VAR: "Im a job variable"
         steps:
-            - name: Print variables
-              env:
-                STEP_VAR: "Im a step variable"
-              run: |
-                suma=$((env.WORKFLOW_VAR + env.WORKFLOW_VAR))
-                echo "La suma de los digitos es: $suma"
-                echo "Job variable: ${{ env.JOB_VAR }}"
-                echo "Step variable: ${{ env.STEP_VAR }}"
+            - name: Sumar digitos
+              resultado= $((vars.VARIABLE_UNO + vars.VARIABLE_UNO))
+              run: echo " La suma es $resultado "
