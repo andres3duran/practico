@@ -14,8 +14,8 @@ jobs:
     steps:
       - name: Ejecutar ${{ matrix.operacion }}
         run: |
-          num1=10
-          num2=5
+          num1=8
+          num2=2
           case "${{ matrix.operacion }}" in
             suma)
               echo $((num1 + num2))
