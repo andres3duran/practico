@@ -1,22 +1,32 @@
-name: suma_de_dos_digitos
+name: Operaciones Matemáticas en Paralelo
 
 on:
   push:
     branches:
-        - 'main' 
-    
+      - main
+
 jobs:
-    suma_de_los_digitos:
-        runs-on: ubuntu-latest
-        enviroment: 
-        outputs:
-              suma_result: ${{ steps.sumar.outputs.suma }}
-        steps:
-            - name: Sumar digitos
-              id: sumar
-              run: |
-                variable1=$${{vars.VARIABLE_UNO }}
-                variable2=$${{vars.VARIABLE_DOS }}
-                suma=$((variable1 + variable2))
-                echo "La suma de $digito1 y $digito2 es: $suma"
-                echo "::set-output name=suma::$suma"
+  operaciones:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        operacion: [suma, resta, multiplicacion, division]
+    steps:
+      - name: Ejecutar ${{ matrix.operacion }}
+        run: |
+          num1=10
+          num2=5
+          case "${{ matrix.operacion }}" in
+            suma)
+              echo $((num1 + num2))
+              ;;
+            resta)
+              echo $((num1 - num2))
+              ;;
+            multiplicacion)
+              echo $((num1 * num2))
+              ;;
+            division)
+              echo $((num1 / num2))
+              ;;
+          esac
